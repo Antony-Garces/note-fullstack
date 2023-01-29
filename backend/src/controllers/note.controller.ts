@@ -37,7 +37,7 @@ const postNote = async ({body}: Request, res: Response, next: NextFunction) => {
   const title = body.title
   try {
     if(!title){
-      throw createHttpError(400, "Note must hava a title")
+      throw createHttpError(400, "Note must have a title")
     }
     const note = await postNoteItem(body)
     res.status(201).json(note)
